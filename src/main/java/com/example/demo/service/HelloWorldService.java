@@ -4,10 +4,6 @@
  */
 package com.example.demo.service;
 
-import com.example.demo.domain.User;
-
-import java.util.List;
-
 /**
  * @author liuxin <br>
  * @date 2019/3/23 10:56 <br>
@@ -16,5 +12,5 @@ import java.util.List;
  */
 public interface HelloWorldService {
 
-    public List<User> findAll();
+
 }
