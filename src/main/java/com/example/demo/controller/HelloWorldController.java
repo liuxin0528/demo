@@ -4,7 +4,6 @@
  */
 package com.example.demo.controller;
 
-import com.example.demo.domain.User;
 import com.example.demo.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +29,5 @@ public class HelloWorldController {
     }
 
 
-    @RequestMapping("/queryAllUser")
-    public List<User> queryAllUser(){
-        return helloWorldService.findAll();
-    }
+
 }
