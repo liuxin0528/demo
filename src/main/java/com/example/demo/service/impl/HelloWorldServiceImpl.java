@@ -21,5 +21,11 @@ import javax.annotation.Resource;
 @Service
 public class HelloWorldServiceImpl implements HelloWorldService {
 
+    @Resource
+    private BaseAreaMapper baseAreaMapper;
 
+    @Override
+    public BaseArea queryBaseAreaByAreaId() {
+        return baseAreaMapper.selectByPrimaryKey("100000");
+    }
 }

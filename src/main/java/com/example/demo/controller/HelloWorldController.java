@@ -33,6 +33,10 @@ public class HelloWorldController {
     }
 
 
+    @RequestMapping("/queryBaseAreaByAreaId")
+    public BaseArea queryBaseAreaByAreaId(){
+        return helloWorldService.queryBaseAreaByAreaId();
+    }
 
 
 }

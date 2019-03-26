@@ -14,7 +14,7 @@ import com.example.demo.entity.BaseArea;
  */
 public interface HelloWorldService {
 
-
+    public BaseArea queryBaseAreaByAreaId();
 
 
 }
