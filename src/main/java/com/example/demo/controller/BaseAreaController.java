@@ -38,6 +38,6 @@ public class BaseAreaController {
         }
 
         model.addAttribute("baseAreaList", baseAreaList);
-        return "/baseArea/baseArea";
+        return "baseArea/baseArea";
     }
 }
