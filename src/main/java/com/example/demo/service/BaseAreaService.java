@@ -8,13 +8,11 @@ import com.example.demo.entity.BaseArea;
 
 /**
  * @author liuxin <br>
- * @date 2019/3/23 10:56 <br>
+ * @date 2019/3/26 11:34 <br>
  * @project demo <br>
  * @description <br>
  */
-public interface HelloWorldService {
+public interface BaseAreaService {
 
-
-
-
+    public BaseArea queryBaseAreaByAreaId();
 }
