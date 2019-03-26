@@ -4,6 +4,7 @@
  */
 package com.example.demo.controller;
 
+import com.example.demo.entity.BaseArea;
 import com.example.demo.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,5 +30,9 @@ public class HelloWorldController {
     }
 
 
+    @RequestMapping("/queryBaseAreaByAreaId")
+    public BaseArea queryBaseAreaByAreaId(String areaId){
+        return helloWorldService.queryBaseAreaByAreaId(areaId);
+    }
 
 }

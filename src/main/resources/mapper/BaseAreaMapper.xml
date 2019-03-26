@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.BaseAreaMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.BaseArea" >
+    <id column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="area_name" property="areaName" jdbcType="VARCHAR" />
+    <result column="short_area_name" property="shortAreaName" jdbcType="VARCHAR" />
+    <result column="area_parentcode" property="areaParentcode" jdbcType="VARCHAR" />
+    <result column="area_level" property="areaLevel" jdbcType="VARCHAR" />
+    <result column="area_descript" property="areaDescript" jdbcType="VARCHAR" />
+    <result column="area_lng" property="areaLng" jdbcType="VARCHAR" />
+    <result column="area_lat" property="areaLat" jdbcType="VARCHAR" />
+    <result column="area_sort" property="areaSort" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    area_code, area_name, short_area_name, area_parentcode, area_level, area_descript, 
+    area_lng, area_lat, area_sort
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_area
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from base_area
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.entity.BaseArea" >
+    insert into base_area (area_code, area_name, short_area_name, 
+      area_parentcode, area_level, area_descript, 
+      area_lng, area_lat, area_sort
+      )
+    values (#{areaCode,jdbcType=VARCHAR}, #{areaName,jdbcType=VARCHAR}, #{shortAreaName,jdbcType=VARCHAR}, 
+      #{areaParentcode,jdbcType=VARCHAR}, #{areaLevel,jdbcType=VARCHAR}, #{areaDescript,jdbcType=VARCHAR}, 
+      #{areaLng,jdbcType=VARCHAR}, #{areaLat,jdbcType=VARCHAR}, #{areaSort,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.BaseArea" >
+    insert into base_area
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="areaName != null" >
+        area_name,
+      </if>
+      <if test="shortAreaName != null" >
+        short_area_name,
+      </if>
+      <if test="areaParentcode != null" >
+        area_parentcode,
+      </if>
+      <if test="areaLevel != null" >
+        area_level,
+      </if>
+      <if test="areaDescript != null" >
+        area_descript,
+      </if>
+      <if test="areaLng != null" >
+        area_lng,
+      </if>
+      <if test="areaLat != null" >
+        area_lat,
+      </if>
+      <if test="areaSort != null" >
+        area_sort,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaName != null" >
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="shortAreaName != null" >
+        #{shortAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaParentcode != null" >
+        #{areaParentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLevel != null" >
+        #{areaLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="areaDescript != null" >
+        #{areaDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLng != null" >
+        #{areaLng,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLat != null" >
+        #{areaLat,jdbcType=VARCHAR},
+      </if>
+      <if test="areaSort != null" >
+        #{areaSort,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.BaseArea" >
+    update base_area
+    <set >
+      <if test="areaName != null" >
+        area_name = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="shortAreaName != null" >
+        short_area_name = #{shortAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaParentcode != null" >
+        area_parentcode = #{areaParentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLevel != null" >
+        area_level = #{areaLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="areaDescript != null" >
+        area_descript = #{areaDescript,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLng != null" >
+        area_lng = #{areaLng,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLat != null" >
+        area_lat = #{areaLat,jdbcType=VARCHAR},
+      </if>
+      <if test="areaSort != null" >
+        area_sort = #{areaSort,jdbcType=INTEGER},
+      </if>
+    </set>
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.BaseArea" >
+    update base_area
+    set area_name = #{areaName,jdbcType=VARCHAR},
+      short_area_name = #{shortAreaName,jdbcType=VARCHAR},
+      area_parentcode = #{areaParentcode,jdbcType=VARCHAR},
+      area_level = #{areaLevel,jdbcType=VARCHAR},
+      area_descript = #{areaDescript,jdbcType=VARCHAR},
+      area_lng = #{areaLng,jdbcType=VARCHAR},
+      area_lat = #{areaLat,jdbcType=VARCHAR},
+      area_sort = #{areaSort,jdbcType=INTEGER}
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

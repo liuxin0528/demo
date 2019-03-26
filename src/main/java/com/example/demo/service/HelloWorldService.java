@@ -4,6 +4,8 @@
  */
 package com.example.demo.service;
 
+import com.example.demo.entity.BaseArea;
+
 /**
  * @author liuxin <br>
  * @date 2019/3/23 10:56 <br>
@@ -11,6 +13,8 @@ package com.example.demo.service;
  * @description <br>
  */
 public interface HelloWorldService {
+
+    public BaseArea queryBaseAreaByAreaId(String areaId);
 
 
 }

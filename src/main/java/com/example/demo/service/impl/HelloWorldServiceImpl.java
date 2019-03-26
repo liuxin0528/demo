@@ -4,9 +4,13 @@
  */
 package com.example.demo.service.impl;
 
+import com.example.demo.dao.BaseAreaMapper;
+import com.example.demo.entity.BaseArea;
 import com.example.demo.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author liuxin <br>
@@ -17,7 +21,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelloWorldServiceImpl implements HelloWorldService {
 
+    @Resource
+    private BaseAreaMapper baseAreaMapper;
 
 
-
+    @Override
+    public BaseArea queryBaseAreaByAreaId(String areaId) {
+        return baseAreaMapper.selectByPrimaryKey("100000");
+    }
 }
