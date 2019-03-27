@@ -21,7 +21,7 @@ import javax.servlet.ServletRegistration;
  * @description <br>
  */
 @Configuration
-public class DruidConfiguration {
+public class DruidConfig {
 
     @Bean
     public ServletRegistrationBean statViewServlet(){

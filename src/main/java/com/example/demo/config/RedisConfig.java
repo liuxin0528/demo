@@ -22,7 +22,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @description <br>
  */
 @Configuration
-public class RedisConfiguration {
+public class RedisConfig {
 
     @Bean
     @SuppressWarnings("all")

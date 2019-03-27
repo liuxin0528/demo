@@ -28,6 +28,7 @@ public class HelloWorldController {
     @Autowired
     private HelloWorldService helloWorldService;
 
+    //直接注入即可
     @Autowired
     private RedisUtil redisUtil;
 

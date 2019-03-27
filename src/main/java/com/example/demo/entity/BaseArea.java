@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
-public class BaseArea {
+import java.io.Serializable;
+
+public class BaseArea implements Serializable {
     private String areaCode;
 
     private String areaName;
