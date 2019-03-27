@@ -6,6 +6,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.BaseArea;
 import com.example.demo.service.HelloWorldService;
+import com.example.demo.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,9 @@ public class HelloWorldController {
     @Autowired
     private HelloWorldService helloWorldService;
 
+    @Autowired
+    private RedisUtil redisUtil;
+
     @RequestMapping("/hello")
     public String index(){
         return "Hello World";
@@ -36,6 +40,17 @@ public class HelloWorldController {
     @RequestMapping("/queryBaseAreaByAreaId")
     public BaseArea queryBaseAreaByAreaId(){
         return helloWorldService.queryBaseAreaByAreaId();
+    }
+
+    @RequestMapping("/setRedisValue")
+    public boolean setRedisValue(){
+        redisUtil.set("aa", "中华人民共和国");
+        return true;
+    }
+
+    @RequestMapping("/getRedisValue")
+    public String getRedisValue(){
+        return redisUtil.get("aa").toString();
     }
 
 
